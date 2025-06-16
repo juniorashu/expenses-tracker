@@ -1,11 +1,12 @@
-// firebaseAdmin.js
-import admin from "firebase-admin";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const serviceAccount = require("../config/serviceAccountKey.json");
+import admin from 'firebase-admin';
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+// Parse the JSON string from environment variable
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
+if (!admin.apps.length) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  });
+}
 
 export default admin;
