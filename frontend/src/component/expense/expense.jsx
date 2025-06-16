@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ExpenseForm from './ExpenseForm';
-import './Expense.css';
+import ExpenseForm from './expenseForm';
+import './expense.css';
 import axios from 'axios';
 import { getAuth } from 'firebase/auth';
 
