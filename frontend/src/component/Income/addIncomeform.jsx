@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { getAuth } from 'firebase/auth';
-import './addincome.css';
+import './addIncome.css';
 
 function AddSalaryForm({ onSalaryAdded }) {
   const [title, setTitle] = useState('');
