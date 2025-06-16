@@ -1,0 +1,121 @@
+/* Expense.css */
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.expense-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Form Section */
+.expense-form {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* List Section */
+.expense-list {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.expense-list h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.expense-list h3 {
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+/* Expense Card */
+.income-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.income-card .icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #e74c3c;
+}
+
+.income-card .details {
+  flex: 1;
+}
+
+.income-card .details h4 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.income-card .details p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.income-card .details p strong {
+  color: #e74c3c;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+  }
+  
+  .expense-form {
+    width: 35%;
+    max-width: 350px;
+  }
+  
+  .expense-list {
+    flex: 1;
+  }
+}
+
+/* Empty State */
+.expense-list > p {
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}

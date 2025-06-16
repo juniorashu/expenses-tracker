@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+
+# Firebase admin SDK key (sensitive)
+firebaseAdmin.js
+firebaseServiceAccountKey.js
+
+# Build outputs
+/build
+/dist
+/functions/lib/
+
+# Logs
+*.log
+
+# IDE and OS files
+.DS_Store
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+Thumbs.db
+
+# React build files
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Backend config and secrets
+config/*.json
+backend/config/*.js
+backend/middleware/firebaseAdmin.js
+backend/middleware/firebaseServiceAccountKey.json
+# Misc
+coverage/
+.cache/
+.next/
+out/
+
+
+// nothing

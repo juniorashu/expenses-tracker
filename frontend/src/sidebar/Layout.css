@@ -1,0 +1,13 @@
+.app-container {
+  margin-right: 250px;
+  padding: 20px;
+  transition: margin-right 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .app-container {
+    margin-right: 0;
+    padding: 20px 60px 20px 20px; /* For right menu button */
+  }
+}

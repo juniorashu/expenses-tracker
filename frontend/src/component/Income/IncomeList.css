@@ -1,0 +1,12 @@
+.salary-list {
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .salary-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  

@@ -1,0 +1,65 @@
+/* AddSalaryForm.css */
+.Salary-Form {
+  width: 100%; /* Default to full width for mobile */
+  padding: 0;
+}
+
+.Salary-Form h2 {
+  text-align: left;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.Salary-Form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Salary-Form input,
+.Salary-Form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.Salary-Form input:focus,
+.Salary-Form textarea:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+.Salary-Form button {
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.Salary-Form button:hover {
+  background-color: #218838;
+}
+
+.error {
+  background: #dc3545;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .Salary-Form {
+    width: 20%; /* Switch to 20% width on desktop */
+  }
+}

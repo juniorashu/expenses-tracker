@@ -1,0 +1,47 @@
+/* ExpenseForm.css */
+.page {
+  width: 100%;
+  padding: 0;
+}
+
+.page h2 {
+  text-align: left;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.page input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.page input:focus {
+  border-color: #e74c3c;
+  outline: none;
+}
+
+.page button {
+  padding: 12px;
+  background-color: #e74c3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.page button:hover {
+  background-color: #c0392b;
+}
