@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { getAuth } from 'firebase/auth';
-import './Income.css';
+import './income.css';
 import AddSalaryForm from './addIncomeform';
 
 function Income() {
