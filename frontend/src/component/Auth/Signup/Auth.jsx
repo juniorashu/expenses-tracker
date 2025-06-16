@@ -161,7 +161,7 @@ export default function Auth() {
         >
           {isSignUp
             ? "Already have an account? Log In"
-            : "Don't have an account? Sign Up"}
+            : "Don't have an account? Signs Up"}
         </p>
       </div>
     </div>
