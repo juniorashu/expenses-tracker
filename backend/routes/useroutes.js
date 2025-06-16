@@ -1,7 +1,7 @@
 // routes/userRoutes.js
 import express from 'express';
-import { syncUser } from '../controller/Usercontroller.js'; // Correct path
-import { getUsers } from '../controller/usercontroller.js'; // Optional, if you have a getUsers function
+
+import { getUsers,syncUser } from '../controller/Usercontroller.js'; // Optional, if you have a getUsers function
 import verifyFirebaseToken  from '../middleware/verifyFirebaseToken.js' // Middleware goes in middleware/
 import { validateUserSync } from '../middleware/validateRequest.js'; // Validation middleware
 const router = express.Router();
