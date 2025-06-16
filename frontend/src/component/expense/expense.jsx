@@ -26,7 +26,7 @@ const Expense = () => {
     const token = await getToken();
     if (!token) return;
 
-    axios.get('http://localhost:5000/api/expenses', {
+    axios.get('/api/expenses', {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => {
