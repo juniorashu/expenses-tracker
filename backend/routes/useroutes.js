@@ -6,7 +6,7 @@ import verifyFirebaseToken  from '../middleware/verifyFirebaseToken.js' // Middl
 import { validateUserSync } from '../middleware/validateRequest.js'; // Validation middleware
 const router = express.Router();
 
-// Route to get all users (optional)
+// Route to get all users (optional) Usercontroller
 router.get("/", getUsers); // You can remove this if getUsers is not defined
 
 // Sync user after Firebase login/signup
