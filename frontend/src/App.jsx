@@ -6,7 +6,7 @@ import Layout from './sidebar/Layout'
 import LandingPage from './component/Navigation Bar/landPage';
 import Auth from './component/Auth/Signup/Auth';
 import Dashboard from './component/Dashboard/DashBoard';
-import Income from './component/Income/Income'
+import Income from './component/Income/income'
 import SignUp from './component/Auth/Signup/Signup';
 import Expense from './component/Expense/Expense';
 
