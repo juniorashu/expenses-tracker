@@ -8,7 +8,7 @@ import Auth from './component/Auth/Signup/Auth';
 import Dashboard from './component/Dashboard/DashBoard';
 import Income from './component/Income/income'
 import SignUp from './component/Auth/Signup/Signup';
-import Expense from './component/Expense/Expense';
+import Expense from './component/expense/expense';
 
 function App() {
   return (
