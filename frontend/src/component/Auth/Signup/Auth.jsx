@@ -6,8 +6,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  getAuth,
-  onAuthStateChanged
+ 
  
 } from "firebase/auth";
 import { useState } from "react";
@@ -171,22 +170,5 @@ export default function Auth() {
 
 // src/components/Auth.jsx
 // code for auth that handle both logout and signout
-export const checkAuth = () => {
-  return new Promise((resolve) => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      resolve(!!user);
-    });
-  });
-};
 
-export const handleProtectedNavigation = async (navigate, path) => {
-  const isAuthenticated = await checkAuth();
-  if (!isAuthenticated) {
-    // Store the intended path for redirect after login
-    localStorage.setItem('redirectPath', path);
-    navigate('/login');
-    return false;
-  }
-  return true;
-};
+

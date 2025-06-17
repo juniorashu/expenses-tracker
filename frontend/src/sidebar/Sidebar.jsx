@@ -4,13 +4,41 @@ import userAvatar from '../assets/avatar.jpg';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { handleLogout } from '../component/Auth/Signup/Signout';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import handleProtectedNavigation from '../component/Auth/Signup/Auth';
+// import handleProtectedNavigation from '../component/Auth/Signup/Auth';
 
 export default function Sidebar() {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+
+/**
+ * Checks if a user is authenticated using Firebase Auth.
+ * Returns a boolean.
+ */
+const checkAuth = () => {
+  return new Promise((resolve) => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      unsubscribe(); // Important: prevent memory leak
+      resolve(!!user);
+    });
+  });
+};
+
+/**
+ * Redirects to /login if the user is not authenticated.
+ * Stores the intended path in localStorage for redirect after login.
+ */
+const handleProtectedNavigation = async (navigate, path) => {
+  const isAuthenticated = await checkAuth();
+  if (!isAuthenticated) {
+    localStorage.setItem('redirectPath', path);
+    navigate('/login');
+    return false;
+  }
+  return true;
+};
 
   useEffect(() => {
     const handleResize = () => {

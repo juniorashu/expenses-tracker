@@ -50,16 +50,16 @@ const ExpenseTrackerLanding = () => {
   <div className="mock-balance-card">
     <div className="mock-balance">
       <span className="mock-label">Total Balance</span>
-      <span className="mock-amount">$8,245.50</span>
+      <span className="mock-amount">8,245.50frs</span>
     </div>
     <div className="mock-balance-stats">
       <div>
         <span className="mock-label">Income</span>
-        <span className="mock-amount positive">+$4,200</span>
+        <span className="mock-amount positive">+4,200frs</span>
       </div>
       <div>
         <span className="mock-label">Expenses</span>
-        <span className="mock-amount negative">-$1,954</span>
+        <span className="mock-amount negative">-1,954frs</span>
       </div>
     </div>
   </div>
@@ -82,14 +82,14 @@ const ExpenseTrackerLanding = () => {
       <div className="mock-progress-bar">
         <div className="mock-progress-fill" style={{ width: '65%' }}></div>
       </div>
-      <span className="mock-amount">$325/$500</span>
+      <span className="mock-amount">325frs/500frs</span>
     </div>
     <div className="mock-budget-card">
       <span className="mock-category">🚗 Transport</span>
       <div className="mock-progress-bar">
         <div className="mock-progress-fill" style={{ width: '30%' }}></div>
       </div>
-      <span className="mock-amount">$90/$300</span>
+      <span className="mock-amount">90frs/300frs</span>
     </div>
   </div>
 
@@ -101,7 +101,7 @@ const ExpenseTrackerLanding = () => {
         <span className="mock-merchant">Grocery Store</span>
         <span className="mock-date">Today, 3:45 PM</span>
       </div>
-      <span className="mock-amount negative">-$86.30</span>
+      <span className="mock-amount negative">-86.30frs</span>
     </div>
     <div className="mock-transaction">
       <span className="mock-icon">💰</span>
@@ -109,7 +109,7 @@ const ExpenseTrackerLanding = () => {
         <span className="mock-merchant">Salary Deposit</span>
         <span className="mock-date">Mar 1, 9:00 AM</span>
       </div>
-      <span className="mock-amount positive">+$4,200</span>
+      <span className="mock-amount positive">+4,200frs</span>
     </div>
   </div>
 </div> </div>
@@ -214,7 +214,7 @@ const ExpenseTrackerLanding = () => {
           <div className="pricing-card">
             <h3>Basic</h3>
             <div className="price">
-              {activeTab === 'monthly' ? '$4.99' : '$3.49'}
+              {activeTab === 'monthly' ? '4.99frs' : '3.49frs'}
               <span>/mo</span>
             </div>
             <ul className="features-list">
@@ -229,7 +229,7 @@ const ExpenseTrackerLanding = () => {
             <div className="popular-badge">Most Popular</div>
             <h3>Pro</h3>
             <div className="price">
-              {activeTab === 'monthly' ? '$9.99' : '$6.99'}
+              {activeTab === 'monthly' ? '9.99frs' : '6.99frs'}
               <span>/mo</span>
             </div>
             <ul className="features-list">
@@ -243,7 +243,7 @@ const ExpenseTrackerLanding = () => {
           <div className="pricing-card">
             <h3>Family</h3>
             <div className="price">
-              {activeTab === 'monthly' ? '$14.99' : '$10.49'}
+              {activeTab === 'monthly' ? '14.99frs' : '10.49frs'}
               <span>/mo</span>
             </div>
             <ul className="features-list">
@@ -261,7 +261,7 @@ const ExpenseTrackerLanding = () => {
       <section className="final-cta">
         <div className="cta-container">
           <h2>Ready to Transform Your Finances?</h2>
-          <p>Join over 1 million users who've saved an average of $3,000/year</p>
+          <p>Join over 1 million users who've saved an average of 3,000frs/year</p>
           <button className="primary-cta large"  onClick={() => navigate('/auth')}>
             Start Your Free Trial <span className="arrow">→</span>
           </button>

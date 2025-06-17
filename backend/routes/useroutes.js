@@ -1,12 +1,12 @@
 // routes/userRoutes.js
 import express from 'express';
-import { syncUser } from '../controller/usercontroller.js'; // Correct path
-import { getUsers } from '../controller/usercontroller.js'; // Optional, if you have a getUsers function
+// import { syncUser } from '../controller/usercontroller.js'; // Correct path
+import { getUsers,syncUser } from '../controller/usercontroller.js'; // Optional, if you have a getUsers function
 import verifyFirebaseToken  from '../middleware/verifyFirebaseToken.js' // Middleware goes in middleware/
 import { validateUserSync } from '../middleware/validateRequest.js'; // Validation middleware
 const router = express.Router();
 
-// Route to get all users (optional)
+// Route to get all users (optional)s
 router.get("/", getUsers); // You can remove this if getUsers is not defined
 
 // Sync user after Firebase login/signup
