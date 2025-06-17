@@ -30,7 +30,7 @@ export default function Auth() {
         const token = await userCredential.user.getIdToken();
 
         // 2. Sync with MongoDB
-        const response = await fetch("http://localhost:5000/api/users/sync", {
+        const response = await fetch("/api/users/sync", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function Auth() {
 
         localStorage.setItem("token", token);
 
-        await fetch("http://localhost:5000/api/users/sync", {
+        await fetch("/api/users/sync", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export default function Auth() {
       const user = result.user;
       const token = await user.getIdToken();
 
-      const response = await fetch("http://localhost:5000/api/users/sync", {
+      const response = await fetch("/api/users/sync", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -160,7 +160,7 @@ export default function Auth() {
         >
           {isSignUp
             ? "Already have an account? Log In"
-            : "Don't have an account? Sign Up"}
+            : "Don't have an account? Signs Up"}
         </p>
       </div>
     </div>

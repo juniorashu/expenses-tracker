@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ExpenseForm from './ExpenseForm';
-import './Expense.css';
+import ExpenseForm from './expenseForm';
+import './expense.css';
 import axios from 'axios';
 import { getAuth } from 'firebase/auth';
 
@@ -26,7 +26,7 @@ const Expense = () => {
     const token = await getToken();
     if (!token) return;
 
-    axios.get('http://localhost:5000/api/expenses', {
+    axios.get('/api/expenses', {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => {

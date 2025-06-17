@@ -25,10 +25,10 @@ const Dashboard = () => {
         }
 
         const [incomesRes, expensesRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/incomes", {
+          axios.get("/api/incomes", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:5000/api/expenses", {
+          axios.get("/api/expenses", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

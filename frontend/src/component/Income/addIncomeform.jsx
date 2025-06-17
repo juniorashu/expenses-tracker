@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { getAuth } from 'firebase/auth';
-import './addincome.css';
+import './addIncome.css';
 
 function AddSalaryForm({ onSalaryAdded }) {
   const [title, setTitle] = useState('');
@@ -23,7 +23,7 @@ function AddSalaryForm({ onSalaryAdded }) {
 
     try {
       const token = await user.getIdToken();
-      await axios.post('http://localhost:5000/api/incomes', {
+      await axios.post('/api/incomes', {
         title, amount, date, description
       }, {
         headers: {
