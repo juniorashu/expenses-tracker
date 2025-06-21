@@ -1,13 +1,10 @@
 // src/components/Auth.jsx
-
 import { auth } from "../firebase";
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
- 
- 
 } from "firebase/auth";
 import { useState } from "react";
 import './Auth.css';
@@ -23,51 +20,45 @@ export default function Auth() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
+      if (!email || !password) {
+        throw new Error("Email and password are required");
+      }
+
+      let userCredential;
+
       if (isSignUp) {
-        // 1. Create Firebase user
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const token = await userCredential.user.getIdToken();
-
-        // 2. Sync with MongoDB
-        const response = await fetch("/api/users/sync", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            uid: userCredential.user.uid,
-            email: userCredential.user.email,
-          }),
-        });
-
-        if (!response.ok) throw new Error("Failed to sync with database");
-
-        alert("Account created in both Firebase and MongoDB!");
+        userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        alert("Account created in Firebase!");
       } else {
-        // Log in existing user
-        await signInWithEmailAndPassword(auth, email, password);
-        const token = await auth.currentUser.getIdToken();
+        userCredential = await signInWithEmailAndPassword(auth, email, password);
+        alert("Logged in with Firebase!");
+      }
 
-        localStorage.setItem("token", token);
+      const token = await userCredential.user.getIdToken();
+      localStorage.setItem("token", token); // ✅ Save token globally
 
-        await fetch("/api/users/sync", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            uid: auth.currentUser.uid,
-            email: auth.currentUser.email,
-          }),
-        });
+      // Sync with your backend
+      const response = await fetch("http://localhost:5000/api/users/sync", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+        }),
+      });
 
-        alert("Successfully logged in!");
+      if (!response.ok) {
+        const errData = await response.json();
+        throw new Error(errData.error || "Failed to sync with database");
       }
 
       navigate("/dashboard");
+
     } catch (error) {
       alert("Error: " + error.message);
     } finally {
@@ -81,8 +72,9 @@ export default function Auth() {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       const token = await user.getIdToken();
+      localStorage.setItem("token", token); // ✅ Store it
 
-      const response = await fetch("/api/users/sync", {
+      const response = await fetch("http://localhost:5000/api/users/sync", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +88,7 @@ export default function Auth() {
 
       if (!response.ok) throw new Error("Failed to sync with database");
 
-      alert("Successfully signed in with Google and synced!");
+      alert("Google login success!");
       navigate("/dashboard");
     } catch (error) {
       alert("Google sign-in error: " + error.message);
@@ -143,7 +135,6 @@ export default function Auth() {
 
         <div className="google-auth">
           <p className="divider">or continue with</p>
-
           <button onClick={handleGoogleLogin} className="google-button">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
@@ -154,21 +145,12 @@ export default function Auth() {
           </button>
         </div>
 
-        <p
-          style={{ marginTop: "1rem", cursor: "pointer" }}
-          onClick={() => setIsSignUp(!isSignUp)}
-        >
+        <p style={{ marginTop: "1rem", cursor: "pointer" }} onClick={() => setIsSignUp(!isSignUp)}>
           {isSignUp
             ? "Already have an account? Log In"
-            : "Don't have an account? Signs Up"}
+            : "Don't have an account? Sign Up"}
         </p>
       </div>
     </div>
   );
 }
-
-
-// src/components/Auth.jsx
-// code for auth that handle both logout and signout
-
-

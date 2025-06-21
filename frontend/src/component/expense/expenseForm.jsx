@@ -25,7 +25,7 @@ const ExpenseForm = ({ onAddExpense }) => {
       const token = await getIdToken(user); // ✅ Get ID token
 
       const res = await axios.post(
-        '/api/expenses',
+        'http://localhost:5000/api/expenses',
         newExpense,
         {
           headers: {

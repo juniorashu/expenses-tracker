@@ -27,6 +27,6 @@ const expenseSchema = new mongoose.Schema({
   timestamps: true, // Adds createdAt and updatedAt fields automatically
 });
 
-const Expense = mongoose.model('Expense', expenseSchema);
+const Expense =  mongoose.models.Expense || mongoose.model('Expense', expenseSchema);
 
 export default Expense;

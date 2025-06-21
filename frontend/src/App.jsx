@@ -9,6 +9,7 @@ import Dashboard from './component/Dashboard/DashBoard';
 import Income from './component/Income/income'
 import SignUp from './component/Auth/Signup/Signup';
 import Expense from './component/expense/expense';
+import Deepseek from './component/deepseek/deepseek';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Income" element={<Income />} />
           <Route path="/expense" element={<Expense />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/AI' element={<Deepseek />} />
         </Routes>
       
     </AuthProvider>

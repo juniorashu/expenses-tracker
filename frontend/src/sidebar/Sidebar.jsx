@@ -174,10 +174,10 @@ const handleProtectedNavigation = async (navigate, path) => {
               📈 Dashboard
             </button>
             <button 
-              onClick={() => handleNavigation('/transactions')} 
+              onClick={() => handleNavigation('/AI')} 
               style={{ ...linkStyle, background: 'none', border: 'none', cursor: 'pointer' }}
             >
-              📄 View Transactions
+              📄 Expense AI
             </button>
             <button 
               onClick={() => handleNavigation('/income')} 
