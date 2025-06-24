@@ -7,7 +7,7 @@ const SalaryList = () => {
   const [incomes, setIncomes] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/incomes')
+    axios.get('https://expenses-tracker-jn6x.onrender.com/api/incomes')
       .then((res) => {
         console.log('Fetched incomes:', res.data);
         setIncomes(res.data);
@@ -18,7 +18,7 @@ const SalaryList = () => {
   }, []);
   // Fetch incomes when the component mounts for delete
  const handleDelete = (id) => {
-  axios.delete(`/api/incomes/${id}`)
+  axios.delete(`https://expenses-tracker-jn6x.onrender.com/api/incomes/${id}`)
     .then(() => {
       setIncomes((prev) => prev.filter((salary) => salary.id !== id));
     })
