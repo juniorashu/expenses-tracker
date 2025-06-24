@@ -15,7 +15,7 @@ function Income() {
     if (!user) return;
 
     const token = await user.getIdToken();
-    axios.get('http://localhost:5000/api/incomes', {
+    axios.get('https://expenses-tracker-jn6x.onrender.com/api/incomes', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -39,7 +39,7 @@ function Income() {
     if (!user) return;
 
     const token = await user.getIdToken();
-    axios.delete(`http://localhost:5000/api/incomes/${id}`, {
+    axios.delete(`https://expenses-tracker-jn6x.onrender.com/api/incomes/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
