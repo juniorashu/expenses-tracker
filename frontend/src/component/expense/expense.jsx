@@ -26,7 +26,7 @@ const Expense = () => {
     const token = await getToken();
     if (!token) return;
 
-    axios.get('http://localhost:5000/api/expenses', {
+    axios.get('https://expenses-tracker-jn6x.onrender.com/api/expenses', {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then((res) => {
@@ -51,7 +51,7 @@ const Expense = () => {
     const token = await getToken();
     if (!token) return;
 
-    axios.delete(`http://localhost:5000/api/expenses/${id}`, {
+    axios.delete(`https://expenses-tracker-jn6x.onrender.com/api/expenses/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then(() => {
