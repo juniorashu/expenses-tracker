@@ -25,7 +25,7 @@ const ExpenseForm = ({ onAddExpense }) => {
       const token = await getIdToken(user); // ✅ Get ID token
 
       const res = await axios.post(
-        'http://localhost:5000/api/expenses',
+        'https://expenses-tracker-jn6x.onrender.com/api/expenses',
         newExpense,
         {
           headers: {
