@@ -28,7 +28,7 @@ export default function Auth() {
         const token = await userCredential.user.getIdToken();
 
         // 2. Sync with MongoDB
-        const response = await fetch("/api/users/sync", {
+        const response = await fetch("https://expenses-tracker-jn6x.onrender.com/api/users/sync", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default function Auth() {
 
         localStorage.setItem("token", token);
 
-        await fetch("/api/users/sync", {
+        await fetch("https://expenses-tracker-jn6x.onrender.com/api/users/sync", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export default function Auth() {
       const user = result.user;
       const token = await user.getIdToken();
 
-      const response = await fetch("http://localhost:5000/api/users/sync", {
+      const response = await fetch("https://expenses-tracker-jn6x.onrender.com/api/users/sync", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
