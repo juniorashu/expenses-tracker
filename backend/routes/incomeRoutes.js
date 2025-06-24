@@ -1,6 +1,6 @@
 // routes/incomeRoute.js
 import express from 'express';
-import Income from '../models/income.js';
+import Income from '../models/Income.js';
 import verifyFirebaseToken from '../middleware/verifyFirebaseToken.js';
 
 const router = express.Router();
