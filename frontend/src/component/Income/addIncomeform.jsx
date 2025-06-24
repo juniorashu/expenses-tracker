@@ -23,7 +23,7 @@ function AddSalaryForm({ onSalaryAdded }) {
 
     try {
       const token = await user.getIdToken();
-      await axios.post('http://localhost:5000/api/incomes', {
+      await axios.post('https://expenses-tracker-jn6x.onrender.com/api/incomes', {
         title, amount, date, description
       }, {
         headers: {
