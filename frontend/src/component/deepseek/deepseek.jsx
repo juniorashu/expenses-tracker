@@ -16,7 +16,7 @@ const handleAskAI = async () => {
     const token = localStorage.getItem("token");
     console.log("Token being sent:", token); // ✅ Debug line
 
-    const res = await fetch("http://localhost:5000/api/ai/summary", {
+    const res = await fetch("https://expenses-tracker-jn6x.onrender.com/api/ai/summary", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
