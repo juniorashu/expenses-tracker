@@ -1,6 +1,6 @@
 // routes/userRoutes.js
 import express from 'express';
-import { getUsers, syncUser } from '../controller/usercontroller.js'; // Import getUsers only if it's used
+import { getUsers, syncUser } from '../controller/Usercontroller.js'; // Import getUsers only if it's used
 import verifyFirebaseToken from '../middleware/verifyFirebaseToken.js'; // Middleware for Firebase Auth
 import { validateUserSync } from '../middleware/validateRequest.js'; // Validation middleware
 
