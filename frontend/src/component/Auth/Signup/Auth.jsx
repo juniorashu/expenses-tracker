@@ -40,7 +40,7 @@ export default function Auth() {
       localStorage.setItem("token", token); // ✅ Save token globally
 
       // Sync with your backend
-      const response = await fetch("http://localhost:5000/api/users/sync", {
+      const response = await fetch("https://expenses-tracker-jn6x.onrender.com/api/users/sync", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export default function Auth() {
       const token = await user.getIdToken();
       localStorage.setItem("token", token); // ✅ Store it
 
-      const response = await fetch("http://localhost:5000/api/users/sync", {
+      const response = await fetch("https://expenses-tracker-jn6x.onrender.com/api/users/sync", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
