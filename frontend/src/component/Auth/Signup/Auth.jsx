@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import './Auth.css';
 import { useNavigate } from "react-router-dom";
+import google from "../../../assets/google.png"; // Import Google logo
 
 export default function Auth() {
   const [email, setEmail] = useState("");
@@ -137,7 +138,7 @@ export default function Auth() {
           <p className="divider">or continue with</p>
           <button onClick={handleGoogleLogin} className="google-button">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              src={google}
               alt="Google logo"
               className="google-logo"
             />
